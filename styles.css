@@ -26,6 +26,7 @@ h4 {
 .avatar {
     width: 100px;
     height: 150px;
+    margin-top: 1.5em;
     border-radius: 15px;
     box-shadow: -11px 7px 9px 1px rgba(0, 0, 0, 0.25);
 }
@@ -212,16 +213,184 @@ h4 {
     margin-right: 0;
 }
 
+.btn-modal {
+    display: flex;
+    position: relative;
+    width: 150px;
+    height: 70px;
+    background-color: rgb(193, 181, 204);
+}
+
 .btn {
-    background: rgb(94, 50, 129);
-    padding: 15px 20px;
-    color: white;
-    border: none;
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    background: transparent;
+    padding: 0;
+    border: 1px solid rgb(35, 37, 44);
+    border-radius: 5px;
     font-family: inherit;
     font-size: 1.1em;
     cursor: pointer;
+    z-index: 5;
 }
 
 .btn:hover {
     opacity: 0.9;
 }
+
+.btn-modal > a {
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+    box-shadow: 4px -2px 5px black;
+}
+
+.btn-modal > a:hover {
+    box-shadow: inset 1px -1px 5px black;
+}
+
+.Modal {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background: rgba(0,0,0,0.7);
+    pointer-events: none;
+}
+.Modal:target {
+    display: flex;
+    pointer-events: auto;
+} 
+.Modal_Body {
+    position: relative;
+    height: 30vh;
+    z-index: 2;
+    margin: auto;
+    display: block;
+    padding: 15px;
+    background: #FFF;
+}
+
+.Modal_Body > p {
+display: flex;
+height: 100%;
+align-items: center;
+margin: 0;
+}
+
+.Modal-full {
+  position: absolute;
+  display: block;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+}
+.close:before, 
+.close:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 20px;
+    transform: rotate(45deg) translate(-50%, -50%);
+    transform-origin: top left;
+    transition: all 420ms;
+    content: '';
+    background-color: red;
+}
+.close:after {
+    transform: rotate(-45deg) translate(-50%, -50%);
+}
+.close:hover:before, 
+.close:hover:after {
+    background-color: blue;
+}
+
+#contact-toggle {
+    display: none;
+}
+
+.hidden-contact {
+    overflow:hidden;
+    transition:transform 0.3s ease-out;
+    transform:scaleY(0);
+    transform-origin:top;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#contact-btn {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 50%;
+    transform: translate(-50%);
+    background-color: #ff7;
+    border: 1px solid;
+    border-radius: 3px; 
+}
+
+.arrow {
+    border: solid black;
+    display: inline-block;
+    padding: 10px;
+    margin: 22px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.arrow.left {
+    border-width: 3px 3px 0 0;
+}
+
+.arrow.right {
+    border-width: 0 0 3px 3px;
+}
+
+#contact-toggle:checked ~ .hidden-contact{
+    visibility: visible;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    overflow:hidden;
+    transition:transform 0.3s ease-out;
+    transform:scaleY(1);
+    transform-origin:top;
+
+}
+
+#contact-toggle:checked ~ #contact-btn {
+    background-color: burlywood;
+}
+
+#contact-toggle:checked ~ #contact-btn > .arrow.left,
+#contact-toggle:checked ~ #contact-btn > .arrow.right {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    margin: 22px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+

@@ -12,16 +12,16 @@
         <div class="info">
             <img class="avatar" src="photo.jpg" alt="мое фото">
             <div class="info-text">
-            <h1>Баранков Олег</h1>
-            <p>Я начинающий <strong>веб-разработчик</strong></p>
-            <p>Я люблю слушать музыку, заниматься спортом, программировать и игры</p>
+                <h1>Баранков Олег</h1>
+                <p>Я начинающий <strong>веб-разработчик</strong></p>
+                <p>Я люблю слушать музыку, заниматься спортом, программировать и игры</p>
 
-            <h4>Мои социальные сети:</h4>
+                <h4>Мои социальные сети:</h4>
 
-            <a href="https://vk.com/id145199152" target="_blank">VK</a>
-            |
-            <a target="_blank" href="https://github.com/Rejei">GitHub</a>
-        </div>
+                <a href="https://vk.com/id145199152" target="_blank">VK</a>
+                |
+                <a target="_blank" href="https://github.com/Rejei">GitHub</a>
+            </div>
         </div>
 
 
@@ -61,25 +61,44 @@
             </ul>
         </div>
         <div class="contact">
-        <h2>Связаться со мной</h2>
-        <form action="/">
-            <div class="row">
-            <div class="form-group">
-            <label for="name">Ваше имя:</label>
-            <input type="text" id="name" placeholder="Введите Ваше имя...">
-        </div>
-        <div class="form-group">
-            <label for="email">Ваше email:</label>
-            <input type="email" id="email" placeholder="Введите Ваш email...">
+            <input type="checkbox" id="contact-toggle" />
+            <label for="contact-toggle" id="contact-btn">
+               
+                <i class="arrow left"></i>
+                <h2>Связаться со мной</h2>
+                
+                <i class="arrow right"></i>
+            </label>
+
+            <div class="hidden-contact">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="name">Ваше имя:</label>
+                        <input type="text" id="name" placeholder="Введите Ваше имя...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваше email:</label>
+                        <input type="email" id="email" placeholder="Введите Ваш email...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="text">Ваше сообщение:</label>
+                    <textarea type="email" id="email" placeholder="Введите Ваше сообщение..."></textarea>
+                </div>
+                <div class="btn-modal">
+                    <input class="btn" type="submit" value="">
+                    <a href="#Modal-window" role="button">Связаться!</a>
+                </div>
+            </div>
         </div>
     </div>
-        <div class="form-group">
-            <label for="text">Ваше сообщение:</label>
-            <textarea type="email" id="email" placeholder="Введите Ваше сообщение..."></textarea>
+
+    <div id="Modal-window" class="Modal">
+        <div class="Modal_Body">
+            <p>Спасибо! Вам скоро ответят.</p>
+            <a href="#Modal-window_close" class="close" tabindex="0" role="button">Закрыть</a>
         </div>
-            <input class="btn" type="submit" value="Связаться!">
-        </form>
-    </div>
+        <a href="#" class="Modal-full"></a>
     </div>
 </body>
 
