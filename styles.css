@@ -130,7 +130,7 @@ h4 {
 
 }
 
-.card:hover span::after{
+.card.bg-yellow:hover span::after{
     content: '';
     position: absolute;
     top: 0;
@@ -142,7 +142,7 @@ h4 {
     transform: translateX(-101%);
 }
 
-.card:hover span::before{
+.card.bg-yellow:hover span::before{
     content: '';
     position: absolute;
     top: 0;
@@ -214,7 +214,7 @@ span:nth-of-type(1)::after{
 
 }
 
-.card:hover tr::after{
+.card.bg-green:hover tr::after{
     content: '';
     position: absolute;
     top: 0;
@@ -222,11 +222,11 @@ span:nth-of-type(1)::after{
     width: 100%;
     height: 100%;
     background:rgb(212, 250, 211);
-    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+    animation: a-ltr2-after 2s cubic-bezier(.77,0,.18,1) forwards;
     transform: translateX(-101%);
 }
 
-.card:hover tr::before{
+.card.bg-green:hover tr::before{
     content: '';
     position: absolute;
     top: 0;
@@ -234,7 +234,7 @@ span:nth-of-type(1)::after{
     width: 100%;
     height: 100%;
     background: linear-gradient(70deg, rgb(212, 250, 211), rgb(136, 216, 120));
-    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+    animation: a-ltr2-before 2s cubic-bezier(.77,0,.18,1) forwards;
     transform: translateX(0);
 }
 
@@ -249,12 +249,12 @@ span:nth-of-type(1)::after{
 }
 
 
-@keyframes a-ltr-after{
+@keyframes a-ltr2-after{
     0% {transform: translateX(-100%)}
     100% {transform: translateX(101%)}
 }
 
-@keyframes a-ltr-before{
+@keyframes a-ltr2-before{
     0% {transform: translateX(0)}
     100% {transform: translateX(200%)}
 }
@@ -292,7 +292,7 @@ span:nth-of-type(1)::after{
 
 }
 
-.card:hover li::after{
+.card.bg-red:hover li::after{
     content: '';
     position: absolute;
     top: 0;
@@ -300,11 +300,11 @@ span:nth-of-type(1)::after{
     width: 100%;
     height: 100%;
     background: rgb(250, 208, 208);
-    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+    animation: a-ltr3-after 2s cubic-bezier(.77,0,.18,1) forwards;
     transform: translateX(-101%);
 }
 
-.card:hover li::before{
+.card.bg-red:hover li::before{
     content: '';
     position: absolute;
     top: 0;
@@ -312,7 +312,7 @@ span:nth-of-type(1)::after{
     width: 100%;
     height: 100%;
     background: linear-gradient(70deg, rgb(250, 208, 208), rgb(216, 120, 120));
-    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+    animation: a-ltr3-before 2s cubic-bezier(.77,0,.18,1) forwards;
     transform: translateX(0);
 }
 
@@ -321,12 +321,12 @@ span:nth-of-type(1)::after{
     animation-delay: 1.5s;
 }
 
-@keyframes a-ltr-after{
+@keyframes a-ltr3-after{
     0% {transform: translateX(100%)}
     100% {transform: translateX(-100%)}
 }
 
-@keyframes a-ltr-before{
+@keyframes a-ltr3-before{
     0% {transform: translateX(200)}
     100% {transform: translateX(-100%)}
 }
