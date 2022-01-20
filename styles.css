@@ -6,10 +6,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --width_1pt: calc(100vw/11);
+    --height_1pt: calc(100vh/5); 
+}
+
 body {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(14 7 62);
+    background-color: rgb(44, 64, 129);
     perspective: 1000px;
 }
 
@@ -21,33 +26,414 @@ body {
     height: 100%;
 }
 
-.cube {
-    position: relative;
+.info {
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition-property: width, transform, opacity;
+    transition-duration: 1s, 1s, 5s;
+    visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.info > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    width: 80%;
+    height: 80%;
+}
+
+.info::before {
+    content: "";
+    position: absolute;
+    top: 0;
     margin: auto;
-    width: 50vmin;
-    height: 50vmin;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    background-color: whitesmoke;
+}
+
+.front:hover .info {
+    background-color: rgb(92, 133, 187);
+    opacity: 1;
+    width: 40vmin;
+    height: 45vmin;
+    visibility: visible;
+    transform:  translateY(-30vmin) rotateX(-20deg) rotateY(0deg) rotateX(0deg) translateZ(20vmin)
+}
+
+.front > span {
+    font-size: 3vmin;
+}
+
+.info-text {
+    padding: 10px;
+}
+
+img {
+    max-width: 15vmin;
+    max-height: 15vmax;
+}
+
+.job {
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 1s, 5s;
+    visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.job > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+    background-color: rgb(59, 55, 55);
+
+}
+
+.right:hover .job {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(10vmin) translateY(-25vmin) rotateX(0deg) rotateY(-25deg) translateZ(10vmin)
+}
+
+.hobbies {
+    position: absolute;
+    width: 30vmin;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform-style: preserve-3d;
+    transition-property: width, transform, opacity;
+    transition-duration: 0.1s, 1.5s, 5s;
+    visibility: hidden;
+}
+
+.hobbies > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+    background-color: rgb(59, 55, 55);
+
+}
+
+.left:hover .hobbies {
+    width: 45vmin;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-15vmin) translateY(-20vmin) rotateY(25deg) rotateZ(-5deg)
+}
+
+.contact {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition-property: width, transform, opacity;
+    transition-duration: 1s, 1s, 5s;
+    visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.contact > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container label.lb {
+    position: relative;
+    width: 35%;
+    height: 30%;
+}
+
+.bottom:hover .contact {
+    width: 45vmin;
+    height: 45vmin;
+    opacity: 1;
+    visibility: visible;
+    font-size: 1.2em;
+    background-color: rgb(99, 92, 92);
+    transform: translateY(-30vmin) rotateX(60deg) rotateY(10deg) translateZ(10vmin)
+}
+
+.btn-modal{
+    position: relative;
+    width: 22vmin;
+    height: 6vmin;
+    transition: all .2s ease;
+    border: 1px solid whitesmoke;
+}
+.btn-modal::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 6%;
+      background-color: rgb(184, 223, 205);
+      width: 20%;
+      height: 100%;
+      transition: all .8s ease;
+}
+.btn-modal:hover {
+    border-radius: 6%;
+    border: 1px solid black;
+}
+.btn-modal:hover::before {
+    width: 100%;
+    background-color: rgb(70, 118, 180);
+    color: ghostwhite;
+}
+
+.btn-modal:active::before {
+    border: 1px solid black;
+    -webkit-box-shadow: 42px 42px 29px 47px rgba(34, 60, 80, 0.2) inset;
+-moz-box-shadow: 42px 42px 29px 47px rgba(34, 60, 80, 0.2) inset;
+box-shadow: 42px 42px 29px 47px rgba(34, 60, 80, 0.2) inset;
+}
+
+.btn-modal > input {
+      position: relative;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 900;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      vertical-align: middle;
+}
+
+.btn-modal > input:active{
+      transform: scale(.96);
+}
+
+.btn-modal a{
+    position: absolute;
+    display: flex;
+    left: 4vmin;
+    justify-content: center;
+    align-items: center;
+    width: 15vmin;
+    height: 5vmin;
+    text-decoration: none;
+    color:floralwhite;
+}
+
+.btn {
+    position: absolute;
+    display: none;
+    width: 80%;
+    height: 26%;
+}
+
+.Modal {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+}
+
+.Modal_Area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 35vmin;
+    width: 100%;
+    height:100%;
+    opacity: 0;
+    font-size: 4vmin;
+    color:floralwhite;
+    background-color: rgb(63, 55, 55);
+}
+
+.Modal:target .Modal_Area {
+    opacity: 1;
+    visibility: visible;
+}
+
+.Modal_Area > div {
+    padding-top: 1vmin;
+    background-color: rgb(19, 18, 18);
+    opacity: 1;
+}
+
+.Modal_Area > div > a {
+    text-decoration: none;
+    color:floralwhite;
+    width: 4vmin;
+    height: 4vmin;
+    border-radius: 45%;
+    background-color: rgb(194, 11, 11);
+    position: absolute;
+    right: 8vmin;
+    top: 8vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5vmin;
     transform-style: preserve-3d;
     transition: transform 1s;
 }
 
-.cube:hover{
+.Modal_Area > div > a:hover {
+    transform: rotateZ(360deg)
+}
+
+.Modal-full {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.games {
+    position: absolute;
+    width: 30vmin;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition-property: width, transform, opacity;
+    transition-duration: 0.1s, 1.5s, 5s;
+    visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.games > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(59, 55, 55);
+}
+
+.games > ul > li {
+    position: absolute;
+    width: 11vmin;
+    height: 2vmin;
+    margin: auto;
+    z-index: 55;
+}
+
+.games > ul >li> a {
+    color:floralwhite;
+    text-decoration: none;
+    z-index: 555;
+    position: absolute;
+    left: 0;
+}
+
+.games > ul >li::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 6%;
+    background-color: rgb(0, 0, 0);
+    width: 0%;
+    height: 100%;
+    transition: all .8s ease;
+}
+
+.games > ul >li:hover {
+  border-radius: 6%;
+  border: 1px solid rgb(146, 81, 81);
+  color: rgb(235, 17, 17);
+}
+
+.games > ul >li:hover::before {
+  width: 100%;
+  opacity: .3;
+  background-color: rgb(224, 237, 255);
+}
+
+.games > ul >li:active::before {
+  border: 1px solid rgb(110, 73, 73);
+  -webkit-box-shadow: 42px 42px 29px 47px rgba(34, 60, 80, 0.2) inset;
+-moz-box-shadow: 42px 42px 29px 47px rgba(34, 60, 80, 0.2) inset;
+box-shadow: 42px 42px 29px 47px rgba(34, 60, 80, 0.2) inset;
+}
+
+.top:hover .games {
+    width: 35vmin;
+    height: 15vmin;;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-15vmin) translateY(-20vmin) rotateX(-45deg)
+}
+
+.cube {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 50vmin;
+    height: 50vmin;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+/* .cube:hover{
     transform: rotateX(0deg) rotateY(0deg) translateZ(-25vmin) !important;
-  }
+  } */
 
 .side {
    position: absolute;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   width: 50vmin;
-    height: 50vmin;
+   width: 25vmin;
+    height: 25vmin;
    background-color: blueviolet; 
    display: flex;
-   padding: 120px 0;
-   color: rgb(218, 224, 240);
+   padding: 5vmin 0;
+   color:floralwhite;
    text-transform: uppercase;
    text-align: center;
    backface-visibility: hidden;
+   transform-style: preserve-3d;
 }
 
 .side span {
@@ -55,37 +441,28 @@ body {
 }
 
   .top {
-    transform: translateY(-25vmin) rotateX(90deg);
+    transform: translateY(-12.5vmin) rotateX(90deg);
     background-color: rgb(64 54 21);
   }
   .left {
-    transform: translateX(-25vmin) rotateY(270deg) ;
+    transform: translateX(-12.5vmin) rotateY(270deg) ;
     background-color: rgb(64 54 21);
   }
   .right {
-      transform: translateX(25vmin) rotateY(90deg);
+      transform: translateX(12.5vmin) rotateY(90deg);
     background-color:rgb(64 54 21);
   }
   .bottom {
-    transform: translateY(25vmin) rotateX(270deg);
+    transform: translateY(12.5vmin) rotateX(270deg);
     background-color: rgb(64 54 21);
   }
   .front {
-    transform: translateZ(25vmin);
+    transform: translateZ(12.5vmin);
     background-color: #0083ff;
   }
   
-  a {
-    color: black;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a:visited {
-    color:rgb(150, 114, 153)
+.job:target {
+    visibility: visible;
 }
 
 .avatar {
@@ -107,11 +484,6 @@ a:visited {
     background-color: transparent;
 }
 
-:root {
-    --width_1pt: calc(100vw/11);
-    --height_1pt: calc(100vh/5); 
-}
-
 .up1 {
     display: inline-block;
     margin: auto;
@@ -120,11 +492,12 @@ a:visited {
 }
 
 #up1:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(-45deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(-45deg) !important;
 }
 
 #up1:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(-45deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(-45deg);
+
 }
 
 .up2 {
@@ -135,11 +508,11 @@ a:visited {
 }
 
 #up2:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(-36deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(-36deg) translateZ(-12.5vmin) !important;
 }
 
 #up2:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(-36deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(-36deg) translateZ(-12.5vmin);
 }
 
 .up3 {
@@ -150,11 +523,11 @@ a:visited {
 }
 
 #up3:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(-27deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(-27deg) translateZ(-12.5vmin) !important;
 }
 
 #up3:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(-27deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(-27deg) translateZ(-12.5vmin);
 }
 
 .up4 {
@@ -165,11 +538,11 @@ a:visited {
 }
 
 #up4:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(-18deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(-18deg) translateZ(-12.5vmin) !important;
 }
 
 #up4:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(-18deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(-18deg) translateZ(-12.5vmin);
 }
 
 .up5 {
@@ -180,11 +553,11 @@ a:visited {
 }
 
 #up5:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(-9deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(-9deg) translateZ(-12.5vmin) !important;
 }
 
 #up5:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(-9deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(-9deg) translateZ(-12.5vmin);
 }
 
 .up6 {
@@ -195,13 +568,12 @@ a:visited {
 }
 
 #up6:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(0deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(0deg) translateZ(-12.5vmin) !important;
 }
 
 #up6:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(0deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(0deg) translateZ(-12.5vmin);
 }
-
 
 .up7 {
     display: inline-block;
@@ -211,11 +583,11 @@ a:visited {
 }
 
 #up7:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(9deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(9deg) translateZ(-12.5vmin) !important;
 }
 
 #up7:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(9deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(9deg) translateZ(-12.5vmin);
 }
 
 .up8 {
@@ -226,11 +598,11 @@ a:visited {
 }
 
 #up8:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(18deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(18deg) translateZ(-12.5vmin) !important;
 }
 
 #up8:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(18deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(18deg) translateZ(-12.5vmin);
 }
 
 .up9 {
@@ -241,11 +613,11 @@ a:visited {
 }
 
 #up9:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(27deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(27deg) translateZ(-12.5vmin) !important;
 }
 
 #up9:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(27deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(27deg) translateZ(-12.5vmin);
 }
 
 .up10 {
@@ -256,11 +628,11 @@ a:visited {
 }
 
 #up10:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(36deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(36deg) translateZ(-12.5vmin) !important;
 }
 
 #up10:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(36deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(36deg) translateZ(-12.5vmin);
 }
 
 .up11 {
@@ -271,11 +643,11 @@ a:visited {
 }
 
 #up11:hover ~ .cube{
-  transform: rotateX(45deg) rotateY(45deg) translateZ(-25vmin) !important;
+  transform: rotateX(45deg) rotateY(45deg) translateZ(0vmin) !important;
 }
 
 #up11:checked ~ .cube {
-    transform: rotateX(45deg) rotateY(45deg) translateZ(-25vmin);
+    transform: rotateX(45deg) rotateY(45deg) translateZ(0vmin);
 }
 
 .right1 {
@@ -286,11 +658,11 @@ a:visited {
 }
 
 #right1:hover ~ .cube{
-  transform: rotateX(23deg) rotateY(55deg) translateZ(-25vmin) !important;
+  transform: rotateX(23deg) rotateY(55deg) translateZ(-12.5vmin) !important;
 }
 
 #right1:checked ~ .cube {
-    transform: rotateX(23deg) rotateY(55deg) translateZ(-25vmin);
+    transform: rotateX(23deg) rotateY(55deg) translateZ(-12.5vmin);
 }
 
 .right2 {
@@ -301,11 +673,11 @@ a:visited {
 }
 
 #right2:hover ~ .cube{
-  transform: rotateX(0deg) rotateY(55deg) translateZ(-25vmin) !important;
+  transform: rotateX(0deg) rotateY(55deg) translateZ(-12.5vmin) !important;
 }
 
 #right2:checked ~ .cube {
-    transform: rotateX(0deg) rotateY(55deg) translateZ(-25vmin);
+    transform: rotateX(0deg) rotateY(55deg) translateZ(-12.5vmin);
 }
 
 .right3 {
@@ -316,11 +688,11 @@ a:visited {
 }
 
 #right3:hover ~ .cube{
-  transform: rotateX(-23deg) rotateY(55deg) translateZ(-25vmin) !important;
+  transform: rotateX(-23deg) rotateY(55deg) translateZ(-12.5vmin) !important;
 }
 
 #right3:checked ~ .cube {
-    transform: rotateX(-23deg) rotateY(55deg) translateZ(-25vmin);
+    transform: rotateX(-23deg) rotateY(55deg) translateZ(-12.5vmin);
 }
 
 .right1_a {
@@ -331,11 +703,11 @@ a:visited {
 }
 
 #right1_a:hover ~ .cube{
-  transform: rotateX(23deg) rotateY(40deg) translateZ(-25vmin) !important;
+  transform: rotateX(23deg) rotateY(40deg) translateZ(-12.5vmin) !important;
 }
 
 #right1_a:checked ~ .cube {
-    transform: rotateX(23deg) rotateY(40deg) translateZ(-25vmin);
+    transform: rotateX(23deg) rotateY(40deg) translateZ(-12.5vmin);
 }
 
 .right2_a {
@@ -346,11 +718,11 @@ a:visited {
 }
 
 #right2_a:hover ~ .cube{
-  transform: rotateX(0deg) rotateY(40deg) translateZ(-25vmin) !important;
+  transform: rotateX(0deg) rotateY(40deg) translateZ(-12.5vmin) !important;
 }
 
 #right2_a:checked ~ .cube {
-    transform: rotateX(0deg) rotateY(40deg) translateZ(-25vmin);
+    transform: rotateX(0deg) rotateY(40deg) translateZ(-12.5vmin);
 }
 
 .right3_a {
@@ -361,11 +733,11 @@ a:visited {
 }
 
 #right3_a:hover ~ .cube{
-  transform: rotateX(-23deg) rotateY(40deg) translateZ(-25vmin) !important;
+  transform: rotateX(-23deg) rotateY(40deg) translateZ(-12.5vmin) !important;
 }
 
 #right3_a:checked ~ .cube {
-    transform: rotateX(-23deg) rotateY(40deg) translateZ(-25vmin);
+    transform: rotateX(-23deg) rotateY(40deg) translateZ(-12.5vmin);
 }
 
 .right1_b {
@@ -376,11 +748,11 @@ a:visited {
 }
 
 #right1_b:hover ~ .cube{
-  transform: rotateX(23deg) rotateY(25deg) translateZ(-25vmin) !important;
+  transform: rotateX(23deg) rotateY(25deg) translateZ(-12.5vmin) !important;
 }
 
 #right1_b:checked ~ .cube {
-    transform: rotateX(23deg) rotateY(25deg) translateZ(-25vmin);
+    transform: rotateX(23deg) rotateY(25deg) translateZ(-12.5vmin);
 }
 
 .right2_b {
@@ -391,11 +763,11 @@ a:visited {
 }
 
 #right2_b:hover ~ .cube{
-  transform: rotateX(0deg) rotateY(25deg) translateZ(-25vmin) !important;
+  transform: rotateX(0deg) rotateY(25deg) translateZ(-12.5vmin) !important;
 }
 
 #right2_b:checked ~ .cube {
-    transform: rotateX(0deg) rotateY(25deg) translateZ(-25vmin);
+    transform: rotateX(0deg) rotateY(25deg) translateZ(-12.5vmin);
 }
 
 .right3_b {
@@ -406,11 +778,11 @@ a:visited {
 }
 
 #right3_b:hover ~ .cube{
-  transform: rotateX(-23deg) rotateY(25deg) translateZ(-25vmin) !important;
+  transform: rotateX(-23deg) rotateY(25deg) translateZ(-12.5vmin) !important;
 }
 
 #right3_b:checked ~ .cube {
-    transform: rotateX(-23deg) rotateY(25deg) translateZ(-25vmin);
+    transform: rotateX(-23deg) rotateY(25deg) translateZ(-12.5vmin);
 }
 
 .down1 {
@@ -421,11 +793,11 @@ a:visited {
 }
 
 #down1:hover ~ .cube{
-  transform: rotateX(-45deg) rotateY(-45deg) translateZ(-25vmin) !important;
+  transform: rotateX(-45deg) rotateY(-45deg) !important;
 }
 
 #down1:checked ~ .cube {
-    transform: rotateX(-45deg) rotateY(-45deg) translateZ(-25vmin);
+    transform: rotateX(-45deg) rotateY(-45deg);
 }
 
 .down2 {
@@ -436,11 +808,11 @@ a:visited {
 }
 
 #down2:hover ~ .cube{
-  transform: rotateX(-45deg) rotateY(-36deg) translateZ(-25vmin) !important;
+  transform: rotateX(-45deg) rotateY(-36deg) translateZ(-12.5vmin) !important;
 }
 
 #down2:checked ~ .cube {
-    transform: rotateX(-45deg) rotateY(-36deg) translateZ(-25vmin);
+    transform: rotateX(-45deg) rotateY(-36deg) translateZ(-12.5vmin);
 }
 
 .down3 {
@@ -451,11 +823,11 @@ a:visited {
 }
 
 #down3:hover ~ .cube{
-  transform: rotateX(-45deg) rotateY(-27deg) translateZ(-25vmin) !important;
+  transform: rotateX(-45deg) rotateY(-27deg) translateZ(-12.5vmin) !important;
 }
 
 #down3:checked ~ .cube {
-    transform: rotateX(-45deg) rotateY(-27deg) translateZ(-25vmin);
+    transform: rotateX(-45deg) rotateY(-27deg) translateZ(-12.5vmin);
 }
 
 .down4 {
@@ -466,11 +838,11 @@ a:visited {
 }
 
 #down4:hover ~ .cube{
-  transform: rotateX(-45deg) rotateY(-18deg) translateZ(-25vmin) !important;
+  transform: rotateX(-45deg) rotateY(-18deg) translateZ(-12.5vmin) !important;
 }
 
 #down4:checked ~ .cube {
-    transform: rotateX(-45deg) rotateY(-18deg) translateZ(-25vmin);
+    transform: rotateX(-45deg) rotateY(-18deg) translateZ(-12.5vmin);
 }
 
 .down5 {
@@ -571,11 +943,11 @@ a:visited {
 }
 
 #down11:hover ~ .cube{
-  transform: rotateX(-45deg) rotateY(45deg) translateZ(-25vmin) !important;
+  transform: rotateX(-45deg) rotateY(45deg) translateZ(0vmin) !important;
 }
 
 #down11:checked ~ .cube {
-    transform: rotateX(-45deg) rotateY(45deg) translateZ(-25vmin);
+    transform: rotateX(-45deg) rotateY(45deg) translateZ(0vmin);
 }
 
 .left1 {
@@ -711,125 +1083,4 @@ a:visited {
 
 #left3_b:checked ~ .cube {
     transform: rotateX(-23deg) rotateY(-25deg) translateZ(-25vmin);
-}
-
-.cube > label.center {
-    position: absolute;
-    transform: translateZ(25vmin);
-    display: inline-block;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-}
-
-.cube > input {
-    position: absolute;
-    display: none;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-}
-
-.center:hover ~ .front{
-  animation: shake_front 1s linear infinite;
-}
-
-@keyframes shake_front {
-    0% {
-        transform: translateX(0vmin) translateZ(25vmin);
-    }
-    20% {
-        transform: translateX(1vmin) translateZ(25vmin);
-    }
-    40%{
-        transform: translateX(-1vmin) translateZ(25vmin);
-    }
-    60%{
-        transform: translateX(2vmin) translateZ(25vmin);
-    }
-    80%{
-        transform: translateX(-2vmin) translateZ(25vmin);
-    }
-    100%{
-        transform: translateX(0vmin) translateZ(25vmin);
-    }
-}
-
-#center:checked ~ .cube {
-    transform: rotateX(0deg) rotateY(0deg) translateZ(-25vmin);
-}
-
-.center:hover ~ .left{
-    animation: shake_left 1s linear infinite;
-  }
-
-  @keyframes shake_left {
-    0% {
-        transform: rotateY(-30deg) translateX(-15vmin) translateZ(65vmin);
-    }
-     20% {
-        transform: rotateX(0deg) rotateY(-70deg) translateZ(50vmin) 
-    }
-    40%{
-        transform: rotateX(0deg) rotateY(-50deg)translateX(-15vmin) translateZ(50vmin) 
-    }
-    60%{
-        transform: rotateX(0deg) rotateY(-65deg) translateX(-15vmin) translateZ(50vmin) 
-    }
-    80%{
-        transform: rotateX(0deg) rotateY(-50deg) translateX(-15vmin) translateZ(50vmin) 
-    }
-    100%{
-        transform: rotateY(-80deg) translateX(-10vmin) translateZ(60vmin);
-    }
-}
-.center:hover ~ .right{
-    animation: shake_right 1s linear infinite;
-  }
-
-  @keyframes shake_right {
-    0% {
-        transform: rotateY(0deg) translateX(50vmin) translateZ(25vmin);
-    }
-    20% {
-        transform: rotateX(0deg) rotateY(70deg) translateZ(50vmin) 
-    }
-    40%{
-        transform: rotateX(0deg) rotateY(50deg)translateX(15vmin) translateZ(50vmin) 
-    }
-    60%{
-        transform: rotateX(0deg) rotateY(65deg) translateX(15vmin) translateZ(50vmin) 
-    }
-    80%{
-        transform: rotateX(0deg) rotateY(50deg) translateX(15vmin) translateZ(50vmin) 
-    }
-    100%{
-        transform: rotateY(50deg) translateX(25vmin) translateZ(50vmin);
-    }
-}
-
-.center:hover ~ .bottom {
-    animation: shake_bottom 1s linear infinite;
-  }
-
-  @keyframes shake_bottom {
-    0% {
-        transform: rotateX(-80deg) translateY(40vmin)  scaleY(0.5);
-    }
-    20% {
-        transform: rotateX(-5deg)  translateY(40vmin)  scaleY(0.5)
-    }
-    40%{
-        transform: rotateX(-18deg)  translateY(40vmin)  scaleY(0.5)
-    }
-    60%{
-        transform: rotateX(-9deg)  translateY(40vmin)  scaleY(0.5)
-    }
-    80%{
-        transform: rotateX(-10deg) translateY(40vmin)  scaleY(0.5)
-    }
-    100%{
-        transform: rotateX(-80deg) translateY(40vmin) scaleY(0.5)
-    }
 }

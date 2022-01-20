@@ -91,143 +91,107 @@
         <label for="left3_b" class="left3_b"><span></span></label>
 
         <div class="cube">
-            <input id="center" name="direction" type="radio">
-            <label for="center" class="center"><span></span></label>
-          <div class="side top">
-            <div class="guides"></div>
-            <span>Мои Игры</span>
-          </div>
-          <div class="side left">
-            <div class="guides"></div>
-            <span>Мои хобби</span>
-          </div>
-          <div class="side front">
-            <div class="info"></div>
-            <img class="avatar" src="photo.jpg" alt="мое фото">
-            <h1>Баранков Олег</h1>
-<!--             <div class="info-text">
-               
-                <p>Начинающий <strong>веб-разработчик</strong></p>
-                <p>Люблю слушать музыку, заниматься спортом, программировать и игры</p>
-
-                <h4>Мои социальные сети:</h4>
-
-                <a href="https://vk.com/id145199152" target="_blank">VK</a>
-                |
-                <a target="_blank" href="https://github.com/Rejei">GitHub</a>
-            </div> -->
-          </div>
-          <div class="side right">
-            <div class="guides"></div>
-            <span>Опыт Работы</span>
-          </div>
-          <div class="side bottom">
-            <div class="guides"></div>
-            <span>Связаться</span>
-          </div>
-        </div>
-      </input>
-
-
-
-
-
-
- <!--   <div class="profile">
-        <div class="card" style="--i:1;">
-            <div class="cube">
-                <div class="cubeFace"><h2>Мои хобби</h2></div>
-              </div>
-            
-             <div class="hobbies">
-                <ol class="list">
-                    <li><span>Спорт: футбол</span></li>
-                    <li><span>Музыка: рок</span></li>
-                    <li><span>Игры: РПГ</span></li>
-                </ol>
-            </div> 
-        </div>
-
-        <div class="card" style="--i:2;">
-            <h2>Опыт работы</h2>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td>Таган-Ремонт</td>
-                        <td>Кровельщик</td>
-                        <td>2013 - 2015</td>
-                    </tr>
-                    <tr>
-                        <td>ООО "Спец-Изделие"</td>
-                        <td>Плотник</td>
-                        <td>2017 - 2019</td>
-                    </tr>
-                </tbody>
-            </table> 
-        </div>
-        <div class="card" style="--i:3;">
-            <h2>Мои Игры</h2>
-             <ul class="link-list">
-                <li>
-                    <a href="https://puzzle-15.herokuapp.com/">Пятнашки</a>
-                </li>
-            </ul>
-        </div> 
-    </div>
-    <div class="container">
-        <img class="avatar" src="photo.jpg" alt="мое фото">
-            <div class="info-text">
-                <h1>Баранков Олег</h1>
-                <p>Начинающий <strong>веб-разработчик</strong></p>
-                <p>Люблю слушать музыку, заниматься спортом, программировать и игры</p>
-
-                <h4>Мои социальные сети:</h4>
-
-                <a href="https://vk.com/id145199152" target="_blank">VK</a>
-                |
-                <a target="_blank" href="https://github.com/Rejei">GitHub</a>
-            </div>
-    </div>
-
-        <div class="contact">
-            <input type="checkbox" id="contact-toggle" />
-            <label for="contact-toggle" id="contact-btn">
-                <i class="arrow left"></i>
-                <h2>Связаться со мной</h2>
-
-                <i class="arrow right"></i>
-            </label>
-        </div>
-            <div class="hidden-contact">
-                <div class="row">
-                    <div class="form-group">
-                        <label for="name">Ваше имя:</label>
-                        <input type="text" id="name" placeholder="Введите Ваше имя...">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Ваш email:</label>
-                        <input type="email" id="email" placeholder="Введите Ваш email...">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="text">Ваше сообщение:</label>
-                    <textarea type="email" id="email" placeholder="Введите Ваше сообщение..."></textarea>
-                </div>
-                <div class="btn-modal">
-                    <input class="btn" type="submit" value="">
-                    <a href="#Modal-window" role="button">Связаться!</a>
+            <div class="side top">
+                <span>Мои Игры</span>
+                <div class="games">
+                    <ul class="link-list">
+                        <li>
+                            <a href="https://puzzle-15.herokuapp.com/">Пятнашки</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+            <div class="side left">
+                <span>Мои хобби</span>
+                <div class="hobbies">
+                    <div>
+                        <ol class="list">
+                            <li><span>Спорт: футбол</span></li>
+                            <li><span>Музыка: рок</span></li>
+                            <li><span>Игры: РПГ</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="side front">
+                <span>Portfolio</span>
+                <div class="info">
+                    <div><img class="avatar" src="photo.jpg" alt="мое фото">
+                        <div class="info-text">
+                            <p>Начинающий <strong>веб-разработчик</strong></p>
+                            <p>Люблю слушать музыку, заниматься спортом, программировать и игры</p>
 
+                            <h4>Мои социальные сети:</h4>
 
-
-    <div id="Modal-window" class="Modal">
-        <div class="Modal_Body">
-            <p>Спасибо! Вам скоро ответят.</p>
-            <a href="#Modal-window_close" class="close" tabindex="0" role="button">Закрыть</a>
+                            <a href="https://vk.com/id145199152" target="_blank">VK</a>
+                            |
+                            <a target="_blank" href="https://github.com/Rejei">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side right">
+                <span>Опыт Работы</span>
+                <div class="job">
+                    <div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Таган-Ремонт</td>
+                                    <td>Кровельщик</td>
+                                    <td>2013 - 2015</td>
+                                </tr>
+                                <tr>
+                                    <td>ООО "Спец-Изделие"</td>
+                                    <td>Плотник</td>
+                                    <td>2017 - 2019</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="side bottom">
+                <span>Связаться</span>
+                <div class="contact">
+                    <div>
+                        <h3>Связаться со мной</h3>
+                        <div class="row">
+                            <div>
+                                <label class="lb" for="name">Ваше имя:</label>
+                                <input type="text" id="name" placeholder="Введите Ваше имя...">
+                            </div>
+                            <div>
+                                <label class="lb" for="email">Ваш email:</label>
+                                <input type="email" id="email" placeholder="Введите Ваш email...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="lb" for="text">Ваше сообщение:</label>
+                            <textarea type="email" id="email" placeholder="Введите Ваше сообщение..."></textarea>
+                        </div>
+                        <div class="btn-modal">
+                            <input class="btn" type="submit" value="">
+                            <a href="#Modal-window" role="button">Связаться!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Modal-window" class="Modal">
+            <div class="Modal_Area">
+                <div>
+                    <p>Спасибо! Вам скоро ответят.</p>
+                    <a href="#Modal-window_close" class="close" tabindex="0" role="button">X</a>
+                </div>
+            </div>
         </div>
         <a href="#" class="Modal-full"></a>
-    </div> -->
+    </div>
+
+
+
+    </div>
 </body>
 
 </html>
