@@ -14,16 +14,21 @@
 
 <body>
     <div class="wrapper">
+        <ul class="menu" role="navigation">
+            <li><a tabindex="1" class="btn__1" href="#about">About Me</a></li>
+            <li><a tabindex="1" class="btn__2"  href="#portfolio">Portfolio</a></li>
+            <li><a tabindex="1" class="btn__3"  href="#contacts">Contacts</a></li>
+        </ul>
         <div id="group1" class="parallax__group">
-            <section class="parallax__layer parallax__layer--deep">
+            <div class="parallax__layer parallax__layer--deep">
                 <!-- deep layer -->
-            </section>
-            <div class="text__title">
+            </div>
+            <section id="text__title">
                 <h1>Баранков Олег</h1>
                 <h2>сайт-портфолио веб-разработчика</h2>
                 <h3>HTML - CSS - JAVASCRIPT - React</h3>
-            </div>
- <!--  back layer -->
+            </section>
+
         </div>
         <div id="group2" class="parallax__group">
             <section id="about" class="parallax__layer parallax__layer--base">
@@ -42,21 +47,34 @@
             <section id="portfolio" class="parallax__layer parallax__layer--base">
                 <!-- base layer -->
                 <p class="text text__css">CSS</p>
-                <h2>Мои работы</h2>
-                <div>
-                    <div>
-                        <p>Пятнашки</p>
-                        <p>Игра - программа простая и без особых излишеств. Главная цель была - собрать на React и перевести на TS. И не мало важным было - поупражняться в написании функций-логики для правильности решений. Помимо классических "Пятнашек": 4*4, можно выбрать и 3*3, 5*5, 6*6 поля. В программу добавлен таймер и выведен список результатов сессии.</p>
-                    </div>
-                    <div>
-                        <p>Куб</p>
-                        <p>Сайт-куб создавался для практики в 3D трансформации по средствам CSS. На сайте нет JS, ни в каком виде не использованы скрипты. При этом куб будет следить за передвижениями мыши, при клике по области куб "запомнит" угол и будет постоянно поворачиваться в его сторону. При наведении на грани куба будет всплывать информация-проекция.</p>
-                    </div>
-                    <div>
-                        <p>Соц.сеть</p>
-                        <p>По видео урокам из YOUTUBE от канала it-kamasutra мною были получены знания по React и собрана "соц.сеть" с применением различных библиотек: от </p>
-                    </div>
+                <div class='gallery'>
+                    <h2>Мои работы</h2>
+                    <input type="radio" name="slide__btn" id="slide__1">
+                    <input type="radio" name="slide__btn" id="slide__2">
+                        <ul class="carousel">
+                            <li class="game15">
+                                <a href="https://puzzle-15.herokuapp.com/" target="_blank">
+                                    <p class="popup__description-game15">Игра - программа простая и без особых излишеств. Главная цель была - собрать на React и перевести на TS. И не мало важным было - поупражняться в написании функций-логики для правильности решений. Помимо классических "Пятнашек": 4*4, можно выбрать и 3*3, 5*5, 6*6 поля. В программу добавлен таймер и выведен список результатов сессии.</p>
+                                    <img src="game15.webp" alt="Пятнашки">
+                                </a>
+                            </li>
+                            <li class="cube">
+                                <a href="https://rejei.github.io/cube/" target="_blank">
+                                    <p class="popup__description-cube">Сайт-куб создавался для практики в 3D трансформации по средствам CSS. На сайте нет JS, ни в каком виде не использованы скрипты. При этом куб будет следить за передвижениями мыши, при клике по области куб "запомнит" угол и будет постоянно поворачиваться в его сторону. При наведении на грани куба будет всплывать информация-проекция.</p>
+                                    <img src="cube.webp" alt="Куб">
+                                </a>
+                            </li>
+                        </ul>
+                    <label for="slide__1" class="slide1__btn-decor slide1__btn-decor1"></label>
+                    <label for="slide__2" class="slide2__btn-decor slide1__btn-decor2"></label>
                 </div>
+
+
+
+
+
+
+
             </section>
             <div class="parallax__layer parallax__layer--fore html"></div> <!-- fore layer -->
             <div class="parallax__layer parallax__layer--deep"></div> <!-- deep layer -->
@@ -99,12 +117,12 @@
             </section>
             <section class="parallax__layer parallax__layer--back">
             </section>
-        </div>
-        <div class="scroll">
-            <div>
-                <a class="nav" href="#group1" role="button">
-                    <div></div>
-                </a>
+            <div class="scroll">
+                <div>
+                    <a class="nav" href="#group1" role="button">
+                        <div></div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
