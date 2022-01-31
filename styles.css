@@ -1,5 +1,7 @@
+/* ---------- Common ---------- */
 :root {
     --base-height: 100vh;
+    font-size: 16px;
 }
 
 * {
@@ -8,46 +10,8 @@
     box-sizing: border-box;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-}
-
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
-
-  }
-  
-  /** 
-   * iPad with landscape orientation.
-   */
-  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
-
-
- 
-  }
-  
-  @media screen and (device-aspect-ratio: 40/71) {
-
-  }
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
-}
-
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.5vmax;
     line-height: 1.42857143;
     color: #333;
     background-color: #fff;
@@ -62,14 +26,17 @@ a:visited {color:beige}
 
 .wrapper {
     overflow-x:hidden;
+    scroll-behavior: smooth;
     overflow-y: auto;
     width: 100%;
     height: var(--base-height);
     perspective: 500px;
 }
 
+/* ---------- Layers ---------- */
 .parallax__group {
     display: flex;
+    justify-content: center;
     position: relative;
     height: var(--base-height);
     transform-style: preserve-3d;
@@ -79,7 +46,7 @@ a:visited {color:beige}
 .parallax__group > section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     border-radius: 0px 5px 5px 0px;
     text-align: center;
@@ -149,6 +116,7 @@ a:visited {color:beige}
     transform: translateY(25vh) translateZ(190px) scale(.7);
 }
 
+/* ---------- Contacts ---------- */
 .contacts {
     width: 60%;
     height: 100%;
@@ -177,7 +145,7 @@ a:visited {color:beige}
 .contacts > textarea {
     width: 28vw;
     height: 20%;
-    margin-left: 10vw;
+    margin-left: 10%;
 }
 
 .logos {
@@ -200,51 +168,11 @@ img {
     height: 10vw;
 }
 
-#about {
-    transform: translateY(12%);
-    scroll-margin-top: 20vh;
-    background: radial-gradient(75vw circle at 20vw 2vw, #ffffde 60%, #4c4848);
-    -webkit-box-shadow: 53px 53px 12px 11px rgba(34, 60, 80, 0.54);
-    -moz-box-shadow: 53px 53px 12px 11px rgba(34, 60, 80, 0.54);
-    box-shadow: 53px 53px 12px 11px rgba(34, 60, 80, 0.54);
-}
-
-#about > div {
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    height: 85%;
-    width: 70vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-}
-
-#portfolio {
-    align-items: center;
-    justify-content: center;
-    scroll-margin-top: 18vh;
-    -webkit-transform: translateY(10%);
-    transform: translateY(10%);
-    background: radial-gradient(75vw circle at 55vw 2vw, #ffffde 60%, #4c4848);
-    -webkit-box-shadow: -53px 53px 12px 11px rgba(34, 60, 80, 0.54);
-    -moz-box-shadow: -53px 53px 12px 11px rgba(34, 60, 80, 0.54);
-    box-shadow: -53px 53px 12px 11px rgba(34, 60, 80, 0.54);
-    position: relative;
-}
-
-#portfolio > h2 {
-    position: absolute;
-    top: 4vh;
-}
-
 #contacts {
-    background: radial-gradient(75vw circle at 35vw 10vw, #ffffde 60%, #4c4848);
-    -webkit-box-shadow: 0px 53px 12px 11px rgba(34, 60, 80, 0.54);
-    -moz-box-shadow: 0px 53px 12px 11px rgba(34, 60, 80, 0.54);
-    box-shadow: 0px 53px 12px 11px rgba(34, 60, 80, 0.54);
+    background: radial-gradient(43em circle at 16em 4em, #ffffde 60%, #4c4848);
+    -webkit-box-shadow: 0em 4em 1em 1em rgba(34, 60, 80, 0.54);
+    -moz-box-shadow: 0em 4em 1em 1em rgba(34, 60, 80, 0.54);
+    box-shadow: 0em 4em 1em 1em rgba(34, 60, 80, 0.54);
 }
 
 #contacts > h3 {
@@ -276,25 +204,48 @@ img {
     background-color: rgb(74, 80, 100);
 }
 
-.scroll {
-    position: absolute;
-    bottom: -6vh;
-    right: 6vw;
-    width: 6vw;
-    height: 6vw;
-    flex-direction: column;
-    background-color: transparent;
-    z-index: 7;
+/* ---------- About ---------- */
+#about {
+    transform: translateY(12%);
+    scroll-margin-top: 20vh;
+    background: radial-gradient(54em circle at 10em 1em, #ffffde 60%, #4c4848);
+    -webkit-box-shadow: 3em 4em 1em 1em rgba(34, 60, 80, 0.54);
+    -moz-box-shadow: 3em 4em 1em 1em rgba(34, 60, 80, 0.54);
+    box-shadow: 3em 4em 1em 1em rgba(34, 60, 80, 0.54);
 }
 
-.scroll > div {
-    width: 100%;
-    height: 100%;
+#about > div {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    height: 85%;
+    width: 70vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: left;
 }
 
+/* ---------- Portfolio ---------- */
+#portfolio {
+    align-items: center;
+    justify-content: center;
+    scroll-margin-top: 18vh;
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+    background: radial-gradient(49em circle at 46em 6em, #ffffde 60%, #4c4848);
+    -webkit-box-shadow: -3em 4em 1em 1em rgba(34, 60, 80, 0.54);
+    -moz-box-shadow: -3em 4em 1em 1em rgba(34, 60, 80, 0.54);
+    box-shadow: -3em 4em 1em 1em rgba(34, 60, 80, 0.54);
+}
+
+#portfolio > h2 {
+    position: absolute;
+    top: 4vh;
+}
+
+/* ---------- Menu ---------- */
 .menu {
     display: flex;
     justify-content: space-around;
@@ -324,12 +275,33 @@ li {
     background-color: #4e408f;
 }
 
+.btn__0:hover,
 .btn__1:hover,
 .btn__2:hover,
 .btn__3:hover {
     transform: scaleY(1.3);
     background-color: beige;
     color:rgba(34, 60, 80, 0.54)
+}
+
+/* ---------- Navigation to Home ---------- */
+.scroll {
+    position: absolute;
+    bottom: -6vh;
+    right: 6vw;
+    width: 6vw;
+    height: 6vw;
+    flex-direction: column;
+    background-color: transparent;
+    z-index: 7;
+}
+
+.scroll > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav {
@@ -371,6 +343,7 @@ box-shadow: -1px 16px 68px 13px rgba(0, 0, 0, 0.18);
     }
 }
 
+/* ---------- Home ---------- */
 .text {
     position: absolute;
     top:0;
@@ -388,11 +361,9 @@ box-shadow: -1px 16px 68px 13px rgba(0, 0, 0, 0.18);
     7px 7px 0 blue;
 }
 
-#text__title {
-    width: 100%;
+.text__title {
+    width: 90%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     color: beige;
     font-family: 'Monoton', cursive;
     text-shadow:
@@ -400,27 +371,25 @@ box-shadow: -1px 16px 68px 13px rgba(0, 0, 0, 0.18);
     5px 5px 0 rgb(87, 6, 128),
     6px 6px 0 black,
     7px 7px 0 black;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
-#text__title > h1 {
+.text__title > h1 {
     order: 2;
     letter-spacing: 1.1rem;
     font-size: 2.5rem;
     text-align: center;
 }
 
-#text__title > h2{
+.text__title > h2{
     order: 1;
     width: 80%;
     letter-spacing: .4rem;
     font-size: 1.5rem;
     text-align: center;
 }
-#text__title > h3 {
+.text__title > h3 {
     order: 3;
-    margin-bottom: 15vmax;
+    margin-bottom: 15vh;
     letter-spacing: .1rem;
     font-size: 1rem;
     text-align: center;
@@ -439,8 +408,8 @@ box-shadow: -1px 16px 68px 13px rgba(0, 0, 0, 0.18);
 .text__js {
     transform: translateZ(250px) translateX(18vw) translateY(-35%) rotateX(-60deg);
 }
-/* groups positions */
 
+/* groups positions */
 #group1 {
     z-index: 3;
 }
@@ -477,8 +446,6 @@ box-shadow: -1px 16px 68px 13px rgba(0, 0, 0, 0.18);
 }
 
 /* -----------Slider-------- */
-
-
 .gallery {
     position: absolute;
     right: 3vw;
@@ -563,6 +530,22 @@ box-shadow: -1px 16px 68px 13px rgba(0, 0, 0, 0.18);
     opacity: 1;
 }
 
+.game15:focus .popup__description-game15{
+    width: 100%;
+    height: 50%;
+    padding-left: 3%;
+    padding-right: 3%;
+    opacity: 1;
+}
+
+.cube:focus .popup__description-cube{
+    width: 100%;
+    height: 50%;
+    padding-left: 3%;
+    padding-right: 3%;
+    opacity: 1;
+}
+
 .gallery > input {
     display: none;
     position: absolute;
@@ -635,3 +618,840 @@ box-shadow: -1px 16px 68px 13px rgba(0, 0, 0, 0.18);
     opacity: 1;
 }
 /* ----------------------- */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 750px) {
+
+    /* ----------- Common -------- */
+    :root {
+        font-size: 20px;
+    }
+
+    /* ----------- Home -------- */
+    .text__title {
+        height: 85%;
+    }
+
+    .text__title > h1 {
+        font-size: 2rem;
+        letter-spacing: 1rem;
+    }
+
+    .text__title > h2 {
+        font-size: 1.2rem;
+    }
+
+    .text__title > h3 {
+        font-size: .9rem;
+        margin-bottom: 15vh;
+    }
+
+    /* ----------- Layers -------- */
+    .parallax__layer--base {
+        height: calc(var(--base-height) - 40%);
+    }
+
+    /* ----------- Portfolio -------- */
+    .gallery > label {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .gallery {
+        right: 3.2vw;
+    }
+
+    .gallery > input {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .game15:focus .popup__description-game15{
+    height: 80%;
+    }
+
+    .game15:focus a > img {
+    transform: scale(1.4);
+    }
+
+    .cube:focus .popup__description-cube{
+    height: 70%;
+    }
+
+    #slide__1 {
+        left: calc(50% - 2.5vw);
+    }
+
+    #slide__2 {
+        left: calc(50% + 2.5vw);
+    }
+
+    .slide1__btn-decor {
+        left: calc(50% - 2.5vw);
+    }
+
+    .slide2__btn-decor {
+        left: calc(50% + 2.5vw);
+    }
+
+    /* ----------- Contacts -------- */
+    .text__js {
+        transform: translateZ(250px) translateX(15vw) translateY(-35%) rotateX(-60deg);
+    }
+
+    #contacts > div {
+        width: 90%;
+        height: 80%;
+    }
+
+    .logos {
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logos > div {
+        justify-content: space-evenly;
+        width: 90%;
+        height: 40%;
+    }
+
+    .contacts > label {
+        width: 100%;
+    }
+
+    .contacts > input {
+        margin: 0;
+        width: 75%;
+    }
+
+    .contacts > textarea {
+        margin: 0;
+        width: 95%;
+    }
+
+    #btn {
+        font-size: 1rem;;
+    }
+}
+
+@media all and (min-device-width: 425px) and (min-device-height: 860px) and (orientation:portrait){
+
+    /* ----------- Home -------- */
+    .text__title {
+        height: 90%;
+    }
+
+    /* ----------- Layers -------- */
+    .parallax__layer--base {
+        height: 60%;
+    }
+
+    /* ----------- Portfolio -------- */
+    .gallery > input {
+        height: 4vw;
+        width: 4vw;
+    }
+    
+    .gallery > label {
+        height: 4vw;
+        width: 4vw;
+    }
+    
+    .game15:focus .popup__description-game15{
+        height: 100%;
+    }
+    
+    .game15:focus a > img {
+        transform: scale(1.4);
+    }
+    
+    .cube:focus .popup__description-cube{
+        height: 100%;
+    }
+    
+    #slide__1 {
+        left: calc(50% - 2.5vw);
+    }
+    
+    #slide__2 {
+        left: calc(50% + 2.5vw);
+    }
+    
+    .slide1__btn-decor {
+        left: calc(50% - 2.5vw);
+    }
+    
+    .slide2__btn-decor {
+        left: calc(50% + 2.5vw);
+    }
+    
+    /* ----------- Contacts -------- */
+    .text__js {
+        transform: translateZ(250px) translateX(15vw) translateY(-35%) rotateX(-60deg);
+    }
+    
+    #contacts > div {
+        width: 90%;
+        height: 80%;
+    }
+    
+    .logos {
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .logos > div {
+        justify-content: space-evenly;
+        width: 90%;
+        height: 40%;
+    }
+    
+    .contacts > label {
+        width: 100%;
+    }
+    
+    .contacts > input {
+        margin: 0;
+        width: 75%;
+    }
+    
+    .contacts > textarea {
+        margin: 0;
+        width: 95%;
+    }
+
+    .text {
+        text-shadow: 3px 3px 0 blue, 3px 3px 0 blue, 3px 3px 0 blue, 3px 3px 0 blue, 4px 4px 0 blue, 5px 5px 0 blue, 6px 6px 0 blue, 7px 7px 0 blue;
+    }
+    
+    #btn {
+        font-size: 1rem;;
+    }
+}
+
+@media all and (min-device-width: 768px) and (min-device-height: 1024px) and (orientation:portrait){
+    /* ----------- Common -------- */
+    :root {
+        font-size: 20px;
+    }
+
+    /* ----------- Home -------- */
+    .text__title > h3 {
+        margin-bottom: 20vh;
+    }
+
+    /* ----------- Menu -------- */
+    .menu {
+        font-size: 1.5rem;
+    }
+
+    /* ----------- Portfolio -------- */
+    .gallery > input {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .gallery > label {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .game15:focus .popup__description-game15{
+        height: 75%;
+    }
+
+    .game15:focus a > img {
+        transform: scale(1.4);
+    }
+
+    .cube:focus .popup__description-cube{
+        height: 75%;
+    }
+
+    #slide__1 {
+        left: calc(50% - 2.5vw);
+    }
+
+    #slide__2 {
+        left: calc(50% + 2.5vw);
+    }
+
+    .slide1__btn-decor {
+        left: calc(50% - 2.5vw);
+    }
+
+    .slide2__btn-decor {
+        left: calc(50% + 2.5vw);
+    }
+
+    /* ----------- Contacts -------- */
+    .text__js {
+        transform: translateZ(250px) translateX(15vw) translateY(-35%) rotateX(-60deg);
+    }
+
+    #contacts > div {
+        width: 90%;
+        height: 80%;
+    }
+
+    .logos {
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logos > div {
+        justify-content: space-evenly;
+        width: 90%;
+        height: 40%;
+    }
+
+    .contacts > label {
+        width: 100%;
+    }
+
+    .contacts > input {
+        margin: 0;
+        width: 75%;
+    }
+
+    .contacts > textarea {
+        margin: 0;
+        width: 95%;
+    }
+
+    #btn {
+        font-size: 1rem;;
+    }
+  }
+  
+  @media screen and (device-aspect-ratio: 2/3) {
+    /* ----------- Common -------- */
+    :root {
+        font-size: 24px;
+    }
+
+    /* ----------- Home -------- */
+    .text__title > h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1rem;
+    }
+
+    .text__title > h2 {
+        font-size: 1.6rem;
+        letter-spacing: .8rem;
+    }
+
+    .text__title > h3 {
+        font-size: 1.2rem;
+        letter-spacing: 0.4rem;
+        margin-bottom: 22vh;
+    }
+}
+
+@media (device-aspect-ratio: 3/4) and (orientation:portrait){
+    /* ----------- Home -------- */
+    .text__title > h3 { 
+        margin-bottom: 25vh; 
+    }
+
+    /* ----------- About -------- */
+    #about > div {
+        font-size: .9rem;
+    }
+
+    /* ----------- Portfolio -------- */
+    .gallery > input {
+        height: 4vw;
+        width: 4vw;
+    }
+        
+    .gallery > label {
+        height: 4vw;
+        width: 4vw;
+    }
+        
+    .game15:focus .popup__description-game15{
+        height: 100%;
+    }
+        
+    .game15:focus a > img {
+        transform: scale(1.4);
+    }
+        
+    .cube:focus .popup__description-cube{
+        height: 100%;
+    }
+        
+    #slide__1 {
+        left: calc(50% - 2.5vw);
+    }
+        
+    #slide__2 {
+        left: calc(50% + 2.5vw);
+    }
+        
+    .slide1__btn-decor {
+        left: calc(50% - 2.5vw);
+    }
+        
+    .slide2__btn-decor {
+        left: calc(50% + 2.5vw);
+    }
+        
+    /* ----------- Contacts -------- */
+    .text__js {
+        transform: translateZ(250px) translateX(15vw) translateY(-35%) rotateX(-60deg);
+    }
+        
+    #contacts > div {
+        width: 90%;
+        height: 80%;
+    }
+        
+    .logos {
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+        
+    .logos > div {
+        justify-content: space-evenly;
+        width: 90%;
+        height: 40%;
+    }
+        
+    .contacts > label {
+        width: 100%;
+    }
+        
+    .contacts > input {
+        margin: 0;
+        width: 75%;
+    }
+        
+    .contacts > textarea {
+        margin: 0;
+        width: 95%;
+    }
+        
+    #btn {
+        font-size: 1rem;;
+    }
+}
+
+@media screen and (device-aspect-ratio: 384/425) and (orientation:portrait) {
+    .text__title > h1 {
+        font-size: 2.8rem;
+        letter-spacing: 1.1rem;
+    }
+
+    .text__title > h2 {
+        font-size: 1.8rem;
+        letter-spacing: .4rem;
+    }
+
+    .text__title > h3 {
+        font-size: 1.2rem;
+        margin-bottom: 21vh;
+    }
+}
+
+@media only screen and (max-width: 414px) and (orientation:portrait) {
+    /* ----------- Common -------- */
+    :root {
+        font-size: 12px;
+    }
+
+    /* ----------- Menu -------- */
+    .menu {
+        font-size: 1.3rem;
+    }
+
+    /* ----------- Layers -------- */
+    .parallax__layer--base {
+        height: calc(var(--base-height) - 40%);
+    }
+
+    /* ----------- Home -------- */
+    .text__title {
+        height: 90%;
+    }
+
+    .text__title > h1 {
+        font-size: 1.6rem;
+        letter-spacing: 1rem;
+    }
+
+    .text__title > h2 {
+        font-size: 1rem;
+        letter-spacing: .3rem;
+    }
+
+    .text__title > h3 {
+        font-size: .9rem;
+        margin-bottom: 15vh;
+    }
+
+    /* ----------- About -------- */
+    #about > div {
+        font-size: .95rem;
+    }
+
+    /* ----------- Portfolio -------- */
+    #portfolio {
+        background: radial-gradient(58em circle at 42em 13em, #ffffde 60%, #4c4848);
+    }
+
+    .text__css {
+        transform: translateZ(200px) translateX(18vw) translateY(20%) rotateX(-80deg);
+    }
+
+    .gallery > label {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .gallery {
+        height: 85%;
+        right: 3.2vw;
+    }
+
+    .gallery > input {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .game15:focus .popup__description-game15{
+        padding: 0 1% 0 1%;
+        height: 100%;
+    }
+
+    .game15:focus a > img {
+        transform: scale(1.4);
+    }
+
+    .cube:focus .popup__description-cube{
+        height: 100%;
+        padding: 0 1% 0 1%;
+    }
+
+    #slide__1 {
+        left: calc(50% - 2.5vw);
+    }
+
+    #slide__2 {
+        left: calc(50% + 2.5vw);
+    }
+
+    .slide1__btn-decor {
+        left: calc(50% - 2.5vw);
+    }
+
+    .slide2__btn-decor {
+        left: calc(50% + 2.5vw);
+    }
+
+    /* ----------- Contacts -------- */
+    .text__js {
+        transform: translateZ(250px) translateX(15vw) translateY(-35%) rotateX(-60deg);
+    }
+
+    #contacts > div {
+        width: 90%;
+        height: 80%;
+    }
+
+    .logos {
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logos > div {
+        justify-content: space-evenly;
+        width: 90%;
+        height: 40%;
+    }
+
+    .contacts > label {
+        width: 100%;
+    }
+
+    .contacts > input {
+        width: 75%;
+        margin: 0;
+    }
+
+    .contacts > textarea {
+        margin: 0;
+        width: 100%;
+    }
+}
+  
+@media only screen and (device-aspect-ratio: 1/2) {
+    /* ----------- Home -------- */
+    .text__title {
+        height: 90%;
+    }
+
+    /* ----------- About -------- */
+    #about > div {
+        font-size: .9rem;
+    }
+
+    /* ----------- Portfolio -------- */
+    #portfolio {
+        background: radial-gradient(49em at 37em 6em, rgb(255, 255, 222) 60%, rgb(76, 72, 72));
+    }
+
+    .gallery > label {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .gallery > input {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    #slide__1 {
+        left: calc(50% - 2.5vw);
+    }
+
+    #slide__2 {
+        left: calc(50% + 2.5vw);
+    }
+
+    .slide1__btn-decor {
+        left: calc(50% - 2.5vw);
+    }
+
+    .slide2__btn-decor {
+        left: calc(50% + 2.5vw);
+    }
+}
+
+  @media screen and (device-aspect-ratio: 16/9), screen and (device-width: 854px) and (device-height: 480px) {
+    /* ----------- Home -------- */
+    .text__title {
+        height: 90%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 2149px) {
+    /* ----------- Common -------- */
+    :root {
+        font-size: 22px;
+    }
+
+    /* ----------- Menu -------- */
+    .menu {
+        top: 90%;
+        height: 10%;
+        font-size: 1.4rem;
+    }
+
+    /* ----------- About -------- */
+    .text__html {
+        transform: translateZ(200px) translateX(-18vw) translateY(-10%) rotateX(-60deg);
+    }
+
+    /* ----------- Layers -------- */
+    .parallax__layer--base {
+        height: calc(var(--base-height) - 40%);
+    }
+
+    /* ----------- Portfolio -------- */
+    .text__css {
+        transform: translateZ(200px) translateX(18vw) translateY(20%) rotateX(-80deg);
+    }
+
+    /* ----------- About -------- */
+    #about {
+        scroll-margin-top: 22vh;
+        background: radial-gradient(54em circle at 10em 1em, #ffffde 76%, #4c4848);
+        font-size: 1.3rem;
+    }
+
+    /* ----------- Contacts -------- */
+    .text__js {
+        transform: translateZ(250px) translateX(15vw) translateY(-35%) rotateX(-60deg);
+    }
+
+    #contacts {
+        background: radial-gradient(63em circle at 17em 6em, #ffffde 84%, #4c4848);
+    }
+
+    #contacts > div {
+        width: 90%;
+        height: 95%;
+    }
+
+    #contacts > h3 {
+        top: .2vw;
+        font-size: 1.5rem;
+    }
+
+    .logos {
+        width: 50%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .logos > div {
+        justify-content: space-evenly;
+        width: 90%;
+        height: 40%;
+    }
+
+    .contacts > label {
+        width: 100%;
+    }
+
+    .contacts > input {
+        width: 55%;
+        margin-left: 10%;
+        font-size: 1rem;
+    }
+
+    .contacts > textarea {
+        margin-left: 10%;
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    #mail > img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    #vk__github {
+        width: 100%;
+        flex-direction: row;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 2150px) {
+    /* ----------- Common -------- */
+    :root {
+        font-size: 28px;
+    }
+
+    /* ----------- Menu -------- */
+    .menu {
+        font-size: 1.2rem;
+    }
+
+    /* ----------- Layers -------- */
+    .parallax__layer--base {
+        height: calc(var(--base-height) - 45%);
+    }
+
+    /* ----------- About -------- */
+    #about {
+        scroll-margin-top: 21vh;
+        background: radial-gradient(54em circle at 20em 1em, #ffffde 60%, #4c4848);
+    }
+
+    #about > div {
+        font-size: 1.5rem;
+        width: 60vw;
+    }
+
+    .text__html {
+        transform: translateZ(200px) translateX(-18vw) translateY(1%) rotateX(322deg);
+    }
+
+        /* ----------- Portfolio -------- */
+    #portfolio {
+        background: radial-gradient(58em circle at 42em 13em, #ffffde 60%, #4c4848);
+    }
+    
+    .text__css {
+        transform: translateZ(200px) translateX(18vw) translateY(25%) rotateX(-35deg);
+    }
+    
+    .gallery {
+        height: 85%;
+        right: 3.2vw;
+    }
+    
+    .game15:focus .popup__description-game15{
+        padding: 0 1% 0 1%;
+        height: 50%;
+    }
+    
+    .game15:focus a > img {
+        transform: scale(1.4);
+    }
+    
+    .cube:focus .popup__description-cube{
+        height: 50%;
+    }
+    
+    /* ----------- Contacts -------- */
+    .text__js {
+        transform: translateZ(250px) translateX(15vw) translateY(-35%) rotateX(-60deg);
+    }
+
+    #contacts {
+        background: radial-gradient(59em circle at 26em 7em, #ffffde 60%, #4c4848);
+    }
+    
+    #contacts > div {
+        width: 90%;
+        height: 95%;
+    }
+    
+    #contacts > h3 {
+        top: .3vw;
+        font-size: 1.5rem;
+    }
+    
+    .logos {
+        width: 50%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .logos > div {
+        justify-content: space-evenly;
+        width: 90%;
+        height: 40%;
+    }
+    
+    .contacts > label {
+        width: 100%;
+    }
+    
+    .contacts > input {
+        width: 50%;
+        font-size: 1rem;
+    }
+    
+    .contacts > textarea {
+        font-size: 1rem;
+        width: 70%;
+    }
+    
+    #mail > img {
+        width: 8vw;
+        height: 8vw;
+    }
+    
+    #vk__github {
+        width: 100%;
+        flex-direction: row;
+    }
+}
